@@ -1,0 +1,47 @@
+#Barplot of total cases in top 25 countries
+library(ggplot2)
+library(plotly)
+subset_data <- head(COVID_19DATA, 30)
+ggplot(subset_data, aes(x = reorder(`Country,Other`, `Total Cases`), y = `Total Cases`)) +
+  geom_bar(stat = "identity", fill = "skyblue") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(title = "Total Cases by Country", x = "Country", y = "Total Cases")
+
+#Linechart of least 15 countries by total cases
+library(ggplot2)
+sorted_data <- COVID_19DATA[order(COVID_19DATA$`Total Cases`), ]
+bottom_15_data <- head(sorted_data, 15)
+line_chart <- ggplot(bottom_15_data, aes(x = `Country,Other`, y = `Total Cases`, group = 1)) +
+  geom_line(color = "cadetblue4") +
+  labs(title = "Total Cases in Countries (Least 15 Countries)",
+       x = "Country",
+       y = "Total Cases") +
+  theme_minimal()
+print(line_chart)
+
+#Point Chart of Total deaths Vs total recovered
+library(ggplot2)
+library(plotly)
+subset_data <- head(COVID_19, 25)
+ggplot(subset_data, aes(x = `Total deaths` , y =`Total Recovered` , color = `Country,Other`)) +
+  geom_point() +
+  labs(title = “Total Deaths vs Total Recovered” , x =”Total Deaths” , y = “Total Recovered”)
+
+#3-d pie chart of Top 15 countries having highest Tests
+library(ggplot2)
+library(plotrix)
+sorted_data <- COVID_19DATA[order(COVID_19DATA$`Total Tests`, decreasing = TRUE), ]
+subset_data <- head(sorted_data, 15)
+custom_colors <- c("plum2","antiquewhite","azure1","turquoise","tan4","beige","cadetblue",
+                   "cornsilk3","bisque1","steelblue","grey41","plum4","palevioletred3")
+pie3D(subset_data$`Total Tests`, labels = subset_data$`Country,Other`, 
+      labelcex = 0.7, explode = 0.05, main = "Top 15 countries by Total Tests",col = custom_colors)
+
+#Pie-Chart Of Top 25 Countries By Total Deaths
+library(ggplot2)
+top_countries <- head(COVID_19DATA[order(-COVID_19DATA$`Total Deaths`),], 25)
+ggplot(top_countries, aes(x = "", y = `Total Deaths`, fill = `Country,Other`)) +
+  geom_bar(stat = "identity", width = 1, color = "white") +
+  coord_polar("y") +
+  theme_void() +
+  labs(title = "Top 25 Countries by Total Deaths (COVID-19)")

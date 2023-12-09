@@ -1,0 +1,96 @@
+#To import and view dataset
+library(readxl)
+COVID_19DATA <- read_excel("~/COVID-19DATA.xlsx")
+View(COVID_19DATA)
+
+#Statistical Summary of column Total cases
+min(COVID_19DATA$`Total Cases`)
+max(COVID_19DATA$`Total Cases`)
+mean(COVID_19DATA$`Total Cases`)
+median(COVID_19DATA$`Total Cases`)
+quantile(COVID_19DATA$`Total Cases`,0.25)
+quantile(COVID_19DATA$`Total Cases`,0.75)
+sd(COVID_19DATA$`Total Cases`)
+var(COVID_19DATA$`Total Cases`)
+range(COVID_19DATA$`Total Cases`)
+
+#Statistical Summary of column Total Deaths
+min(COVID_19DATA$`Total Deaths`)
+max(COVID_19DATA$`Total Deaths`)
+mean(COVID_19DATA$`Total Deaths`)
+median(COVID_19DATA$`Total Deaths`)
+quantile(COVID_19DATA$`Total Deaths`,0.25)
+quantile(COVID_19DATA$`Total Deaths`,0.75)
+sd(COVID_19DATA$`Total Deaths`)
+var(COVID_19DATA$`Total Deaths`)
+range(COVID_19DATA$`Total Deaths`)
+
+#Statistical Summary of column Total Recovered 
+min(COVID_19DATA$`Total Recovered`)
+max(COVID_19DATA$`Total Recovered`)
+mean(COVID_19DATA$`Total Recovered`)
+median(COVID_19DATA$`Total Recovered`)
+quantile(COVID_19DATA$`Total Recovered`,0.25)
+quantile(COVID_19DATA$`Total Recovered`,0.75)
+sd(COVID_19DATA$`Total Recovered`)
+var(COVID_19DATA$`Total Recovered`)
+range(COVID_19DATA$`Total Recovered`)
+
+#Statistical Summary of column Total cases per 1 million
+min(COVID_19DATA$`Total Cases per 1M`)
+max(COVID_19DATA$`Total Cases per 1M`)
+mean(COVID_19DATA$`Total Cases per 1M`)
+median(COVID_19DATA$`Total Cases per 1M`)
+quantile(COVID_19DATA$`Total Cases per 1M`,0.25)
+quantile(COVID_19DATA$`Total Cases per 1M`,0.75)
+sd(COVID_19DATA$`Total Cases per 1M`)
+var(COVID_19DATA$`Total Cases per 1M`)
+range(COVID_19DATA$`Total Cases per 1M`)
+
+#Statistical Summary of column Total Daeths per 1 million
+min(COVID_19DATA$`Deaths per 1M`)
+max(COVID_19DATA$`Deaths per 1M`)
+mean(COVID_19DATA$`Deaths per 1M`)
+median(COVID_19DATA$`Deaths per 1M`)
+quantile(COVID_19DATA$`Deaths per 1M`,0.25)
+quantile(COVID_19DATA$`Deaths per 1M`,0.75)
+sd(COVID_19DATA$`Deaths per 1M`)
+var(COVID_19DATA$`Deaths per 1M`)
+range(COVID_19DATA$`Deaths per 1M`)
+
+#Statistical Summary of column Total Tests
+min(COVID_19DATA$`Total Tests`)
+max(COVID_19DATA$`Total Tests`)
+mean(COVID_19DATA$`Total Tests`)
+median(COVID_19DATA$`Total Tests`)
+quantile(COVID_19DATA$`Total Tests`,0.25)
+quantile(COVID_19DATA$`Total Tests`,0.75)
+sd(COVID_19DATA$`Total Tests`)
+var(COVID_19DATA$`Total Tests`)
+range(COVID_19DATA$`Total Tests`)
+
+#Statistical Summary of column Total Tests per 1 million
+min(COVID_19DATA$`Tests per 1M pop`)
+max(COVID_19DATA$`Tests per 1M pop`)
+mean(COVID_19DATA$`Tests per 1M pop`)
+median(COVID_19DATA$`Tests per 1M pop`)
+quantile(COVID_19DATA$`Tests per 1M pop`,0.25)
+quantile(COVID_19DATA$`Tests per 1M pop`,0.75)
+sd(COVID_19DATA$`Tests per 1M pop`)
+var(COVID_19DATA$`Tests per 1M pop`)
+range(COVID_19DATA$`Tests per 1M pop`)
+
+#Statistical Summary of column Total Population
+min(COVID_19DATA$`Population`)
+max(COVID_19DATA$`Population`)
+mean(COVID_19DATA$`Population`)
+median(COVID_19DATA$`Population`)
+quantile(COVID_19DATA$`Population`,0.25)
+quantile(COVID_19DATA$`Population`,0.75)
+sd(COVID_19DATA$`Population`)
+var(COVID_19DATA$`Population`)
+range(COVID_19DATA$`Population`)
+
+#Statistical Summary of overall dataset
+summary(COVID_19DATA)
+
